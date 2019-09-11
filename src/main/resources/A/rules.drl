@@ -1,0 +1,18 @@
+package A;
+
+import org.kie.kogito.reproducer.model.Person;
+
+rule "Can Drink"
+when
+    Person(age >= 18)
+then
+    System.out.println("Can Drink");
+    drools.getMatch();
+end
+
+rule "Can NOT Drink"
+when
+    Person(age < 18)
+then
+    System.out.println("Can NOT Drink");
+end
